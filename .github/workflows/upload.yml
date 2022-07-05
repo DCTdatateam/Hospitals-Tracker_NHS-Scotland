@@ -1,1 +1,66 @@
+#Name of the action
+name: hospitals-tracker-upload
 
+# Controls when the action will run
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push
+jobs: 
+  autoscrape:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+# Load repo and install R
+    steps:
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@master
+# Set-up R
+    - name: Install packages
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+          install.packages(c(
+            "curl",
+            "tidyverse",
+            "dplyr",
+            "lubridate",
+            "readr",
+            "Rcpp",
+            "sf",
+            "ggmap",
+            "data.table"
+          ))
+      shell: Rscript {0}
+         
+    # Run scripts
+    - name: Delayed discharges
+      run: |
+          source('scripts/delayed-discharges.R')
+      shell: Rscript {0}
+    
+    - name: A&E waiting times
+      run: |
+          source('scripts/A&E-waiting-times.R')
+      shell: Rscript {0}
+    
+    - name: Beds info
+      run: |
+          source('scripts/beds-information.R')
+      shell: Rscript {0}
+      
+    - name: Cancelled ops
+      run: |
+          source('cancelled-operations.R')
+      shell: Rscript {0}
+      
+ # Add new files in data folder, commit along with other modified files, push
+    - name: Commit files
+      run: |
+        git config --local user.name actions-user
+        git config --local user.email "actions@github.com"
+        git add data/*
+        git commit -am "GH ACTION Headlines $(date)"
+        git push origin main
+      env:
+        REPO_KEY: ${{secrets.GITHUB_TOKEN}}
+        username: github-actions
