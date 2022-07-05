@@ -6,7 +6,7 @@ on:
   # but only for the main branch
   push
 jobs: 
-  autoscrape:
+  validate:
     runs-on: windows-latest
 # Load repo and install R
     steps:
