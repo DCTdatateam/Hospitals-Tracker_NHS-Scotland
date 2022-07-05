@@ -1,0 +1,103 @@
+HB,TreatmentLocationName,TreatmentLocationCode,CurrentDepartmentType,FileType,Comments,Status
+S08000015,University Hospital Ayr,A210H,Emergency Department ,Episode,None,Open
+S08000015,University Hospital Crosshouse,A111H,Emergency Department ,Episode,None,Open
+S08000015,Arran War Memorial Hospital,A101H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000015,Davidson Cottage Hospital,A207H,Minor Injury Unit or Other ,Aggregate,Closed from May 2010,Closed
+S08000015,Girvan Community Hospital,A216H,Minor Injury Unit or Other ,Aggregate,Opened from May 2010,Open
+S08000015,Lady Margaret Hospital,A110H,Minor Injury Unit or Other ,Aggregate,Opened from October 2007,Open
+S08000016,Borders General Hospital,B120H,Emergency Department ,Episode,None,Open
+S08000016,Hawick Community  Hospital,B105H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000016,Hay Lodge Hospital,B118H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000016,Kelso Community Hospital,B114H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000016,Knoll Community Hospital,B103H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000017,Dumfries & Galloway Royal Infirmary,Y146H,Emergency Department ,Episode,None,Open
+S08000017,Galloway Community Hospital,Y144H,Emergency Department ,Episode,Episode file from December 2007,Open
+S08000017,Castle Douglas Hospital,Y101H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000017,Kirkcudbright Hospital,Y106H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000017,Moffat Hospital,Y109H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000017,Newton Stewart Hospital,Y110H,Minor Injury Unit or Other ,Episode,Episode file from March 2012,Open
+S08000029,Victoria Hospital (NHS Fife),F704H,Emergency Department ,Episode,None,Open
+S08000029,Adamson Hospital,F708H,Minor Injury Unit or Other ,Episode,Episode file from October 2016,Open
+S08000029,Queen Margaret Hospital,F805H,Minor Injury Unit or Other ,Episode,Changed from ED to MIU 19 January 2012. Started submitting episode level data in July 2007,Open
+S08000029,St Andrews Community Hospital,F709H,Minor Injury Unit or Other ,Episode,Episode file from July 2017,Open
+S08000019,Forth Valley Royal Hospital,V217H,Emergency Department ,Episode,ED opened 12 July 2011,Open
+S08000019,Stirling Health And Care Village,V201H,Minor Injury Unit or Other ,Episode,Until 12 July 2011 this was an ED when Stirling Royal Infirmary closed and Stirling Community Hospital (now Stirling Health and Care Village) opened as MIU,Open
+S08000019,Falkirk Community Hospital,V102H,Minor Injury Unit or Other ,Episode,MIU closed 12 July 2011,Closed
+S08000020,Aberdeen Royal Infirmary,N101H,Emergency Department ,Episode,None,Open
+S08000020,Dr Gray's Hospital,N411H,Emergency Department ,Episode,None,Open
+S08000020,Royal Aberdeen Children's Hospital,N121H,Emergency Department ,Episode,None,Open
+S08000020,Aboyne Hospital,N151H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Chalmers Hospital,N337H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Fleming Hospital,N451H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Forres Health & Care Centre,N683C,Minor Injury Unit or Other ,Aggregate,MIU opened 08 September 2014,Open
+S08000020,Fraserburgh Hospital,N334H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Insch War Memorial Hospital,N332H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Inverurie Hospital,N331H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Jubilee Hospital,N335H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Kincardine Community Hospital,N494H,Minor Injury Unit or Other ,Aggregate,Aggregate file from June 2012,Open
+S08000020,Leanchoil Hospital,N434H,Minor Injury Unit or Other ,Aggregate,MIU closed 07 September 2014,Closed
+S08000020,Peterhead Community Hospital,N333H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Seafield Hospital,N431H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Stephen Hospital,N432H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Turner Memorial Hospital,N433H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000020,Turriff Hospital,N336H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000031,Glasgow Royal Infirmary,G107H,Emergency Department ,Episode,None,Open
+S08000031,Inverclyde Royal Hospital,C313H,Emergency Department ,Episode,None,Open
+S08000031,Royal Alexandra Hospital,C418H,Emergency Department ,Episode,None,Open
+S08000031,Royal Hospital For Children Glasgow,G513H,Emergency Department ,Episode,Moved from Yorkhill to Queen Elizabeth University Hospital 10 June 2015 08:00 hrs.,Open
+S08000031,Queen Elizabeth University Hospital,G405H,Emergency Department ,Episode,Until 02 May 2015 08:00hrs Southern General Hospital when Queen Elizabeth Univeristy Hospital opened and Southern General Hospital closed. Re-named from Southern General University Hospital to Queen Elizabeth University Hospital on 03 July 2015.,Open
+S08000031,New Stobhill Hospital,G207H,Minor Injury Unit or Other ,Episode,"New Stobhill Hospital (formerly Stobhill Hospital), until 18 March 2011, this site had both an ED and MIU, and from 18 March 2011 there was no ED on site.",Open
+S08000031,Vale Of Leven District General Hospital,C206H,Minor Injury Unit or Other ,Episode,None,Open
+S08000031,New Victoria Hospital,G306H,Minor Injury Unit or Other ,Episode,"New Victoria Hospital (formerly Victoria Infirmary), this site had an ED and an MIU up until 16 May 2015 at 08:00 hrs, when the ED closed and the site became an MIU only.",Open
+S08000031,West Glasgow Ambulatory Care Hospital,G516H,Minor Injury Unit or Other ,Episode,Until 30 May 2015 08:00hrs Western Infirmary /Garnavel General ED when MIU opened at West Glasgow Ambulatory Care Hospital and ED at Western Infirmary / Gartnavel General closed. Closed 23 December 2016 21:00 hrs. Re-Opened 03 January 2018 and Closed 20 April 2018.,Closed
+S08000022,Belford Hospital,H212H,Emergency Department ,Episode,Episode file from March 2011,Open
+S08000022,Caithness General Hospital,H103H,Emergency Department ,Episode,Episode file from March 2011,Open
+S08000022,Lorn & Islands Hospital,C121H,Emergency Department ,Episode,Episode file from April 2012,Open
+S08000022,Raigmore Hospital,H202H,Emergency Department ,Episode,None,Open
+S08000022,Aviemore Health Centre,H227B,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Campbeltown Hospital (2007-2009),C103B,Minor Injury Unit or Other ,Aggregate,Campbeltown Hospital was mainly recorded under TreatmentLocation code C103B before 2010 and C122H from 2010 onwards. In July and August 2007 it was recorded under both C103B and C122H.,Closed
+S08000022,Campbeltown Hospital,C122H,Minor Injury Unit or Other ,Aggregate,Campbeltown Hospital was mainly recorded under TreatmentLocation code C103B before 2010 and C122H from 2010 onwards. In July and August 2007 it was recorded under both C103B and C122H.,Open
+S08000022,County Community Hospital,H219H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Cowal Community Hospital,C106H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Dunaros Hospital,C117J,Minor Injury Unit or Other ,Aggregate,Closed in November 2012 - transfer of service to Mull and Iona Hospital,Closed
+S08000022,Dunbar Hospital,H101H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Ian Charles Community Hospital,H210H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Islay Hospital,C108H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Lawson Memorial Hospital,H106H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Dr Mackinnon Memorial Hospital,H214H,Minor Injury Unit or Other ,Aggregate,Dr MacKinnon Memorial Hospital closed March 2022 with services moving to the new Broadford Hospital,Closed
+S08000022,Broadford Hospital,H229H,Minor Injury Unit or Other ,Aggregate,Broadford Hospital opened March 2022 replacing the Dr MacKinnon Memorial Hospital,Open
+S08000022,Mid Argyll Community Hospital And Integrated Care Centre,H224H,Minor Injury Unit or Other ,Aggregate,Mid Argyll Community Hospital and Integrated Care Centre was recorded under TreatmentLocation code C110H before 2010 and H224H from 2010 onwards,Open
+S08000022,Mid Argyll Community Hospital And Integrated Care Centre (2007-2009),C110H,Minor Injury Unit or Other ,Aggregate,Mid Argyll Community Hospital and Integrated Care Centre was recorded under TreatmentLocation code C110H before 2010 and H224H from 2010 onwards,Closed
+S08000022,Mull And Iona Community Hospital,H227H,Minor Injury Unit or Other ,Aggregate,Opened from November 2012,Open
+S08000022,Nairn Town And County Hospital,H208H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Portree Community Hospital,H215H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000022,Ross Memorial Hospital,H217H,Minor Injury Unit or Other ,Aggregate,Closed 02 November 2018. Re-open 31 March 2019.,Closed
+S08000022,Victoria Hospital (NHS Highland),C113H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000032,University Hospital Hairmyres,L302H,Emergency Department ,Episode,None,Open
+S08000032,University Hospital Monklands,L106H,Emergency Department ,Episode,None,Open
+S08000032,University Hospital Wishaw,L308H,Emergency Department ,Episode,None,Open
+S08000032,Kello Hospital,L206H,Minor Injury Unit or Other ,Episode,None,Open
+S08000032,Lady Home Hospital,L207H,Minor Injury Unit or Other ,Episode,None,Open
+S08000024,Royal Hospital For Sick Children Edinburgh,S225H,Emergency Department ,Episode,None,Open
+S08000024,Royal Infirmary Of Edinburgh,S314H,Emergency Department ,Episode,None,Open
+S08000024,St John's Hospital,S308H,Emergency Department ,Episode,None,Open
+S08000024,Belhaven Hospital,S102H,Minor Injury Unit or Other ,Aggregate,Opened from December 2007. Closed October 2012,Closed
+S08000024,Edington Cottage Hospital,S108H,Minor Injury Unit or Other ,Aggregate,Opened from December 2007,Open
+S08000024,Western General Hospital,S116H,Minor Injury Unit or Other ,Episode,MIU and Acute Receiving Unit (ARU) on site,Open
+S08000025,Balfour Hospital,R103H,Emergency Department ,Episode,Episode file from June 2011. Changed to ED 01 January 2014.,Open
+S08000026,Gilbert Bain Hospital,Z102H,Emergency Department ,Episode,None,Open
+S08000030,Ninewells Hospital,T101H,Emergency Department ,Episode,None,Open
+S08000030,Perth Royal Infirmary,T202H,Emergency Department ,Episode,None,Open
+S08000030,Aberfeldy Community Hospital,T207H,Minor Injury Unit or Other ,Episode,Opened from September 2008. Closed November 2015.,Open
+S08000030,Arbroath Infirmary,T304H,Minor Injury Unit or Other ,Episode,None,Open
+S08000030,Blairgowrie Community Hospital,T209H,Minor Injury Unit or Other ,Episode,None,Open
+S08000030,Brechin Infirmary,T305H,Minor Injury Unit or Other ,Episode,None,Open
+S08000030,Crieff Community Hospital,T316H,Minor Injury Unit or Other ,Episode,Opened from September 2008. Episode file from November 2008,Open
+S08000030,Irvine Memorial Hospital,T208H,Minor Injury Unit or Other ,Episode,Closed from July 2008,Closed
+S08000030,Links Health Centre,T357C,Minor Injury Unit or Other ,Episode,None,Open
+S08000030,Pitlochry Community Hospital,T320H,Minor Injury Unit or Other ,Episode,None,Open
+S08000030,St Margaret's Hospital,T205H,Minor Injury Unit or Other ,Episode,Opened from September 2008,Open
+S08000030,Whitehills Health And Community Care Centre,T319H,Minor Injury Unit or Other ,Episode,None,Open
+S08000028,Western Isles Hospital,W107H,Emergency Department ,Episode,None,Open
+S08000028,St Brendan's Hospital,W106H,Minor Injury Unit or Other ,Aggregate,None,Open
+S08000028,Uist & Barra Hospital,W108H,Minor Injury Unit or Other ,Episode,None,Open
