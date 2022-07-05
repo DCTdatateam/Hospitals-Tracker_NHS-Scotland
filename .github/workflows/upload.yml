@@ -9,13 +9,12 @@ on:
   push
 jobs: 
   autoscrape:
-    # The type of runner that the job will run on
     runs-on: windows-latest
 # Load repo and install R
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
-# Set-up R
+# Load libraries
     - name: Install packages
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
