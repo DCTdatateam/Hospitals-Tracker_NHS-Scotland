@@ -50,7 +50,7 @@ jobs:
       
     - name: Cancelled ops
       run: |
-          source('cancelled-operations.R')
+          source('scripts/cancelled-operations.R')
       shell: Rscript {0}
       
  # Add new files in data folder, commit along with other modified files, push
