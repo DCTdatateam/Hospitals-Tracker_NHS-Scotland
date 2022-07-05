@@ -205,7 +205,7 @@ aewt(AEWT_PHS, AEWT_GH)
 
 ## 6. Cancelled Operations
 
-cancelled-ops <- function(x,y) {
+cancelled_ops <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
       print('Warning: Names are not the same, cancelled ops scripts affected')
@@ -232,7 +232,7 @@ temp17 <- curl_download(url=source, destfile=temp17, quiet=FALSE, mode="wb")
 
 CBHB_GH <- read.csv(temp17)
 
-cancelled-ops(CBHB_PHS, CBHB_GH)
+cancelled_ops(CBHB_PHS, CBHB_GH)
 
 ## Cancelled operations Scotland
 
@@ -248,7 +248,7 @@ temp19 <- curl_download(url=source, destfile=temp19, quiet=FALSE, mode="wb")
 
 CS_GH <- read.csv(temp19)
 
-cancelled-ops(CS_PHS, CS_GH)
+cancelled_ops(CS_PHS, CS_GH)
 
 ## Cancelled operations by hospital
 
@@ -264,5 +264,5 @@ temp21 <- curl_download(url=source, destfile=temp21, quiet=FALSE, mode="wb")
 
 CBHOS_GH <- read.csv(temp21)
 
-cancelled-ops(CBHOS_PHS, CBHOS_GH)
+cancelled_ops(CBHOS_PHS, CBHOS_GH)
 
