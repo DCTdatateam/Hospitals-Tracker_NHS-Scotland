@@ -1,7 +1,5 @@
-#Name of the action
-name: compare dataframes 
 
-# Controls when the action will run
+name: compare dataframes 
 
 on:
   # Trigger the workflow on push or pull request,
