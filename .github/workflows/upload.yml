@@ -1,4 +1,3 @@
-#Name of the action
 name: hospitals-tracker-upload
 
 # Controls when the action will run
@@ -8,9 +7,8 @@ on:
   # but only for the main branch
   push
 jobs: 
-  autoscrape:
+  upload:
     runs-on: windows-latest
-# Load repo and install R
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
@@ -52,7 +50,7 @@ jobs:
           source('scripts/cancelled-operations.R')
       shell: Rscript {0}
       
- # Add new files in data folder, commit along with other modified files, push
+ # commit & push
     - name: Commit files
       run: |
         git config --local user.name actions-user
