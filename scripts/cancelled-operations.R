@@ -302,7 +302,15 @@ hospitalmapbase$Group<-c( "0-10", "10-20", "20-30", "30-40", "40-50", "50+")[
 hospitalmapbase <- hospitalmapbase %>% 
   left_join(markerlookup)
 
+## lookup flourish chart IDs
+temp8 <- tempfile()
+source <- "https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/Cancelled-operations-hospital-chart-ids_apr2022.csv"
+temp8 <- curl_download(url=source, destfile=temp8, quiet=FALSE, mode="wb")
 
+Chart_ID <- read.csv(temp8)
+
+hospitalmapbase <- hospitalmapbase %>%
+  left_join(Chart_ID, by = 'Location')
 
 ## exports 
 
