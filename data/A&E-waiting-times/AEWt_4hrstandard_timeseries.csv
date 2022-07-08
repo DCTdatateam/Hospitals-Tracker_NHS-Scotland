@@ -1,4 +1,4 @@
-"Date2","Month","Year","HBT","HBName","NumberOfAttendancesAggregate","Seen within target","Waiting over 4 hrs","PercentageOnTarget","PercentageNotOnTarget","Numberontargetpopup","Numbernotontargetpopup"
+"Date2","Month","Year","HBT","HBName","NumberOfAttendancesAggregate","NumberMeetingTargetAggregate","NumberNotOnTarget","PercentageOnTarget","PercentageNotOnTarget","Seen within target","Waiting over 4 hrs"
 2007-07-01,"Jul","2007","S92000003","Scotland",132240,127790,4450,96.6,3.4,127790,4450
 2007-08-01,"Aug","2007","S92000003","Scotland",135386,130429,4957,96.3,3.7,130429,4957
 2007-09-01,"Sep","2007","S92000003","Scotland",130802,126515,4287,96.7,3.3,126515,4287
