@@ -1,6 +1,8 @@
 name: hospitals-tracker-uploads
 
 on:
+# push:
+  workflow_dispatch:
   schedule: 
     - cron: "30 09 * * TUE"
 jobs: 
