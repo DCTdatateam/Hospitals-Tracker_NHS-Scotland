@@ -1,10 +1,15 @@
-name: hospitals-tracker-uploads
+name: update
 
 on:
 # push:
-  workflow_dispatch:
   schedule: 
     - cron: "30 09 * * TUE"
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+permissions: write-all
+
 jobs: 
   upload:
     runs-on: windows-latest
@@ -28,10 +33,7 @@ jobs:
       shell: Rscript {0}
          
     # Run scripts
-     - name: Column names
-      run: |
-          source('scripts/data-frame.R')
-      shell: Rscript {0}  
+
     
     - name: Delayed discharges
       run: |
