@@ -4,11 +4,6 @@ on:
 # push:
   schedule: 
     - cron: "*/30 * * * TUE"
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-permissions: write-all
 
 jobs: 
   upload:
