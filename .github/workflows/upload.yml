@@ -28,6 +28,13 @@ jobs:
       shell: Rscript {0}
          
     # Run scripts
+    
+    - name: Compare new data
+      run: |
+          source('scripts/data-frame.R')
+      shell: Rscript {0}
+    
+    
     - name: Delayed discharges
       run: |
           source('scripts/delayed-discharges.R')
