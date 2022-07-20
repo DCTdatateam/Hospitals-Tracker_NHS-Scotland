@@ -1,12 +1,9 @@
 ##libraries
 library(tidyverse)
 library(dplyr)
-library(lubridate)                        
-library(readr)   
 library(Rcpp)
+library(s2)
 library(sf)
-library(ggmap)
-library(data.table)
 
 ## PHS Cancelled Planned operations
 
