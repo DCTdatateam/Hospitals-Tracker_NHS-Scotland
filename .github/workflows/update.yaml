@@ -2,8 +2,8 @@ name: update
 
 on:
   workflow_dispatch:
-# schedule: 
-#   - cron: "*/30 * * * TUE"
+  schedule: 
+  - cron: "*/30 * * * TUE"
 
 jobs: 
   upload:
@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
+    
 # Load libraries
     - name: Install packages
       if: steps.cache.outputs.cache-hit != 'true'
@@ -18,17 +19,18 @@ jobs:
           install.packages(c(
             "tidyverse",
             "dplyr",
-            "lubridate",
-            "readr",
             "Rcpp",
-            "sf",
-            "ggmap",
-            "data.table"
+            "s2",
+            "sf"
           ))
       shell: Rscript {0}
          
     # Run scripts
-
+    
+    - name: Compare new data
+      run: |
+          source('scripts/data-frame.R')
+      shell: Rscript {0}
     
     - name: Delayed discharges
       run: |
