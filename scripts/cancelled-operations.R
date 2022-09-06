@@ -107,9 +107,8 @@ names(cancelledops)[names(cancelledops) == 'ClinicalReason'] <- 'Clinical reason
 CBHOS <- read.csv("https://www.opendata.nhs.scot/dataset/479848ef-41f8-44c5-bfb5-666e0df8f574/resource/bcc860a4-49f4-4232-a76b-f559cf6eb885/download/cancellations_by_hospital_march_2022.csv")
 
 CBHOS <- CBHOS %>%
-  mutate(URN=paste(Month,Hospital, sep=""))
-
-CBHOS <- CBHOS[-which(duplicated(CBHOS$URN)), ]
+  mutate(URN=paste(Month,Hospital, sep="")) %>%
+  distinct(URN, .keep_all = TRUE)
 
 ## Hospital locations (open only)
 
