@@ -27,13 +27,13 @@ lookups <- rbind(healthboards,ScotID)
 
 ## Diagnostic waiting times by health board
 
-DWTHB <- read_csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/10dfe6f3-32de-4039-84c2-7e7794a06b31/download/diagnostics_by_board_december_2021.csv")
+DWTHB <- read.csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/10dfe6f3-32de-4039-84c2-7e7794a06b31/download/diagnostics_by_board_december_2021.csv")
 
 names(DWTHB)[names(DWTHB) == 'HBT'] <- 'HB'
 
 ## Diagnostic waiting times Scotland
 
-DWTS <- read_csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/df75544f-4ba1-488d-97c7-30ab6258270d/download/diagnostics_scotland_december_2021.csv")
+DWTS <- read.csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/df75544f-4ba1-488d-97c7-30ab6258270d/download/diagnostics_scotland_december_2021.csv")
 
 names(DWTS)[names(DWTS) == 'Country'] <- 'HB'
 
