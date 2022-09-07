@@ -78,7 +78,7 @@ diagnostic_waits_pivot <- diagnostic_waits %>%
   rowwise() %>% mutate(Total = sum(c_across(`0-7 days`:`365 days and over`))) %>% 
   rowwise() %>% mutate(`Within 6 weeks` = sum(c_across(`0-7 days`:`36-42 days`))) %>%
   rowwise() %>% mutate(`Over 6 weeks` = sum(c_across(`43-49 days`:`365 days and over`))) %>%
-  mutate(`% on target`=round (`Under 6 weeks`/`Total`*100, digit=1)) %>% 
+  mutate(`% on target`=round (`Within 6 weeks`/`Total`*100, digit=1)) %>% 
   mutate(`% not on target`=round (`Over 6 weeks`/`Total`*100, digit=1))
   
 ## export
