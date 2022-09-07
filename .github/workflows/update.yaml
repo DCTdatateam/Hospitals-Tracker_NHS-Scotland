@@ -51,6 +51,13 @@ jobs:
       run: |
           source('scripts/cancelled-operations.R')
       shell: Rscript {0}
+  
+    - name: Diagnostic wais
+      run: |
+          source('scripts/diagnostic-waits.R')
+      shell: Rscript {0}
+      
+      
       
  # commit & push
     - name: Commit files
