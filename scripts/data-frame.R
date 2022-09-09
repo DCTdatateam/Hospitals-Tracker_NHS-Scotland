@@ -5,11 +5,11 @@ library(tidyverse)
 location_lookups <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
-      stop('Warning: Names are not the same in locations, all scripts affected')
+      stop('Warning: Column names changed in locations, all scripts affected')
       break
     }  
     else if(i==tail(names(y),n=1)) {
-      print('Location names match')
+      print('Location column names match')
     }
   }
 }
@@ -50,11 +50,11 @@ location_lookups(CA_PHS, CA_GH)
 delayed_discharges <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
-      stop('Warning: Names are not the same, delayed discharges affected')
+      stop('Warning: Column names changed, delayed discharges affected')
       break
     }  
     else if(i==tail(names(y),n=1)) {
-      print('Delayed discharge names match')
+      print('Delayed discharge column names match')
     }
   }
 }
@@ -103,11 +103,11 @@ age_groups_compare <- setequal(age_groups, age_groups_new)
 beds_info <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
-      stop('Warning: Names are not the same, beds info affected')
+      stop('Warning: Column names changed, beds info affected')
       break
     }  
     else if(i==tail(names(y),n=1)) {
-      print('Beds info names match')
+      print('Beds info column names match')
     }
   }
 }
@@ -131,7 +131,7 @@ specialty_groups_compare <- setequal(specialty_groups, specialty_groups_new)
   
   
   if(specialty_groups_compare == TRUE) {print("specialty groups unchanged")}
-  if(specialty_groups_compare == FALSE) {stop("Warning: specialty groups changes in beds info")}
+  if(specialty_groups_compare == FALSE) {stop("Warning: specialty groups changed in beds info")}
   
 }
 
@@ -140,11 +140,11 @@ specialty_groups_compare <- setequal(specialty_groups, specialty_groups_new)
 hospitals_lookup <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
-      stop('Warning: Names are not the same for hospital locations, cancelled ops and A&E waits affected')
+      stop('Warning: Column names changed for hospital locations, cancelled ops and A&E waits affected')
       break
     }  
     else if(i==tail(names(y),n=1)) {
-      print('Hospital location names match')
+      print('Hospital location column names match')
     }
   }
 }
@@ -164,11 +164,11 @@ hospitals_lookup(currenthospitals_PHS, currenthospitals_GH)
 aewt <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
-      stop('Warning: Names are not the same, A&E waiting times affected')
+      stop('Warning: Column names changed, A&E waiting times affected')
       break
     }  
     else if(i==tail(names(y),n=1)) {
-      print('A&E waiting times names match')
+      print('A&E waiting times column names match')
     }
   }
 }
@@ -187,14 +187,16 @@ aewt(AEWT_PHS, AEWT_GH)
 cancelled_ops <- function(x,y) {
   for (i in names(x)) {
     if (!(i %in% names(y))) {
-      stop('Warning: Names are not the same, cancelled ops scripts affected')
+      stop('Warning: Column names changed, cancelled ops affected')
       break
     }  
     else if(i==tail(names(y),n=1)) {
-      print('Cancelled Ops names match')
+      print('Cancelled ops column names match')
     }
   }
 }
+
+
 
 
 ## Cancelled operations by health board
@@ -205,7 +207,8 @@ CBHB_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/479848ef-41f8-44c5-b
 
 CBHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/cancellations_by_board_april_2022.csv")
 
-cancelled_ops(CBHB_PHS, CBHB_GH)
+cancelled_ops(CBHB_PHS,CBHB_GH)
+
 
 ## Cancelled operations Scotland
 
@@ -227,4 +230,97 @@ CBHOS_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotl
 
 cancelled_ops(CBHOS_PHS, CBHOS_GH)
 
+## 7. Diagnostic waits
 
+diagnostic_waits <- function(x,y) {
+  for (i in names(x)) {
+    if (!(i %in% names(y))) {
+      stop('Warning: Column names changed, diagnostic waits affected')
+      break
+    }  
+    else if(i==tail(names(y),n=1)) {
+      print('Diagnostic waiting times column names match')
+    }
+  }
+}
+
+##diagnostic waits by health board
+
+DWTHB_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/10dfe6f3-32de-4039-84c2-7e7794a06b31/download/diagnostics_by_board_june_2022.csv")
+
+DWTHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/blob/main/data/source-data/diagnostics_by_board_june_2022.csv?raw=true")
+  
+  
+diagnostic_waits(DWTHB_PHS, DWTHB_GH)
+
+## check test groups 
+
+test_groups_HB <- unique(DWTHB_GH$DiagnosticTestDescription)
+test_groups_new_HB <- unique(DWTHB_PHS$DiagnosticTestDescription)
+
+test_groups_compare_HB <- setequal(test_groups_HB, test_groups_new_HB)
+
+{
+  
+  
+  if(test_groups_compare_HB == TRUE) {print("Diagnostic test groups unchanged")}
+  if(test_groups_compare_HB == FALSE) {stop("Warning: Test description groups changed in diagnostic waits")}
+  
+}
+
+## check waiting time groups
+
+waiting_groups_HB <- unique(DWTHB_GH$WaitingTime)
+waiting_groups_new_HB <- unique(DWTHB_PHS$WaitingTime)
+
+waiting_groups_compare_HB <- setequal(waiting_groups_HB, waiting_groups_new_HB)
+
+{
+  
+  
+  if(waiting_groups_compare_HB == TRUE) {print("Diagnostic waiting intervals unchanged")}
+  if(waiting_groups_compare_HB == FALSE) {stop("Warning: Waiting time groups changed in diagnostic waits")}
+  
+}
+
+## diagnostic waits Scotland
+
+DWTS_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/df75544f-4ba1-488d-97c7-30ab6258270d/download/diagnostics_scotland_june_2022.csv")
+DWTS_GH <-  read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/diagnostics_scotland_june_2022.csv")
+  
+diagnostic_waits(DWTS_PHS, DWTS_GH)  
+
+## check test groups 
+
+test_groups_S <- unique(DWTS_GH$DiagnosticTestDescription)
+test_groups_new_S <- unique(DWTS_PHS$DiagnosticTestDescription)
+
+test_groups_compare_S <- setequal(test_groups_S, test_groups_new_S)
+
+{
+  
+  
+  if(test_groups_compare_S == TRUE) {print("Diagnostic test groups unchanged")}
+  if(test_groups_compare_S == FALSE) {stop("Warning: Test description groups changed in diagnostic waits")}
+  
+}
+
+## check waiting time groups
+
+waiting_groups_S <- unique(DWTS_GH$WaitingTime)
+waiting_groups_new_S <- unique(DWTS_PHS$WaitingTime)
+
+waiting_groups_compare_S <- setequal(waiting_groups_S, waiting_groups_new_S)
+
+{
+  
+  
+  if(waiting_groups_compare_S == TRUE) {print("Diagnostic waiting intervals unchanged")}
+  if(waiting_groups_compare_S == FALSE) {stop("Warning: Waiting time groups changed in diagnostic waits")}
+  
+}
+  
+  
+  
+  
+  
