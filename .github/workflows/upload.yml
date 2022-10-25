@@ -6,8 +6,8 @@ jobs:
   upload:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: r-lib/actions/setup-r@master
+    - uses: actions/checkout@main
+    - uses: r-lib/actions/setup-r@main
 
 # Load libraries
     - name: Install packages
