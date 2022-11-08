@@ -2,8 +2,8 @@ name: update
 
 on:
   workflow_dispatch:
-  schedule: 
-  - cron: "*/30 * * * TUE"
+  #schedule: 
+  #- cron: "*/30 * * * TUE"
 
 jobs: 
   upload:
