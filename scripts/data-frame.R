@@ -63,7 +63,7 @@ delayed_discharges <- function(x,y) {
 DDHB_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/52591cba-fd71-48b2-bac3-e71ac108dfee/resource/fd354e4b-6211-48ba-8e4f-8356a5ed4215/download/2022-04_delayed-discharge-beddays-health-board.csv")
 
 
-DDHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/2022-06_delayed-discharge-beddays-health-board.csv")
+DDHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/2022-09_delayed-discharge-beddays-health-board.csv")
 
 delayed_discharges(DDHB_PHS, DDHB_GH)
 
