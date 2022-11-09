@@ -3,13 +3,16 @@ name: compare dataframes
 
 on:
   workflow_dispatch:
+  
 jobs: 
   validate:
     runs-on: windows-latest
-# Load repo and install R
     steps:
-    - uses: actions/checkout@master
-    - uses: r-lib/actions/setup-r@master
+    - uses: actions/checkout@v2
+    - uses: r-lib/actions/setup-r@12d5b556c504a4be89f0dc9779e0de65bf0cfa44
+      with:
+        r-version: ${{ env.R_VERSION }}
+        
 # Load libraries
     - name: Install packages
       if: steps.cache.outputs.cache-hit != 'true'
@@ -21,7 +24,7 @@ jobs:
       shell: Rscript {0}
          
     # Run scripts
-    - name: Column names
+    - name: Compare new data
       run: |
           source('scripts/data-frame.R')
       shell: Rscript {0}
