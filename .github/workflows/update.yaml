@@ -2,8 +2,8 @@ name: update
 
 on:
   workflow_dispatch:
-  #schedule: 
-  #- cron: "*/30 * * * TUE"
+  schedule: 
+  - cron: "*/30 * * * TUE"
 
 jobs: 
   upload:
@@ -53,7 +53,11 @@ jobs:
       run: |
           source('scripts/cancelled-operations.R')
       shell: Rscript {0}
-  
+      
+    - name: Diagnostic waits
+      run: |
+          source('scripts/diagnostic-waits.R')
+      shell: Rscript {0}
       
       
       
