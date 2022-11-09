@@ -248,7 +248,7 @@ diagnostic_waits <- function(x,y) {
 
 DWTHB_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/10dfe6f3-32de-4039-84c2-7e7794a06b31/download/diagnostics_by_board_june_2022.csv")
 
-DWTHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/blob/main/data/source-data/diagnostics_by_board_june_2022.csv?raw=true")
+DWTHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/diagnostics_by_board_june_2022_new.csv")
 
 
 diagnostic_waits(DWTHB_PHS, DWTHB_GH)
@@ -286,7 +286,7 @@ waiting_groups_compare_HB <- setequal(waiting_groups_HB, waiting_groups_new_HB)
 ## diagnostic waits Scotland
 
 DWTS_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/3d1f49b2-f770-492f-82c9-ebefdc56ece4/resource/df75544f-4ba1-488d-97c7-30ab6258270d/download/diagnostics_scotland_june_2022.csv")
-DWTS_GH <-  read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/diagnostics_scotland_june_2022.csv")
+DWTS_GH <-  read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/diagnostics_scotland_june_2022_new.csv")
 
 diagnostic_waits(DWTS_PHS, DWTS_GH)  
 
