@@ -42,45 +42,56 @@ names(DWTS)[names(DWTS) == 'Country'] <- 'HB'
 diagnostic_waits <- rbind(DWTS, DWTHB) %>% 
   left_join(lookups)
 
-##date formatting and remove NA values
+##date formatting and remove blanks 
+## and remove 'total waiting' (only given for March & April 2020 for Glasgow with no further breakdown of waiting times)
 
 diagnostic_waits <- diagnostic_waits %>%
-  mutate(Date=as.Date(as.character(MonthEnding), format="%Y%m%d"))
+  mutate(Date=as.Date(as.character(MonthEnding), format="%Y%m%d")) %>% 
+  filter(NumberOnListQF != "d:") %>% 
+  filter(NumberOnListQF != ":") %>% 
+  filter(WaitingTime != "Total Number Waiting")
 
-diagnostic_waits$NumberOnList <- replace(diagnostic_waits$NumberOnList, is.na(diagnostic_waits$NumberOnList), 0)
-
-
-
+## diagnostic_waits$NumberOnList <- replace(diagnostic_waits$NumberOnList, is.na(diagnostic_waits$NumberOnList), 0)
 
 ## group formatting
 ## 15-21days missing space
+
 
 diagnostic_waits$WaitingTime <- factor(diagnostic_waits$WaitingTime, 
                                        levels = c("0-7 days", "8-14 days", "15-21days", "22-28 days",
                                                   "29-35 days", "36-42 days", "43-49 days", "50-56 days",
                                                   "57-63 days", "64-70 days", "71-77 days", "78-84 days",
-                                                  "85-91 days", "92-182 days", "183-273 days", "274-364 days",
-                                                  "365 days and over")) 
+                                                  "85-91 days", "92-182 days", "183-273 days", "274-364 days", 
+                                                  "92 days and over", "365 days and over")) 
 
 Group_order <- c("0-7 days", "8-14 days", "15-21days", "22-28 days",
-              "29-35 days", "36-42 days", "43-49 days", "50-56 days",
-              "57-63 days", "64-70 days", "71-77 days", "78-84 days",
-              "85-91 days", "92-182 days", "183-273 days", "274-364 days",
-              "365 days and over")
+                 "29-35 days", "36-42 days", "43-49 days", "50-56 days",
+                 "57-63 days", "64-70 days", "71-77 days", "78-84 days",
+                 "85-91 days", "92-182 days", "183-273 days", "274-364 days", 
+                 "92 days and over", "365 days and over")
 
 diagnostic_waits <- diagnostic_waits[ order(match(diagnostic_waits$WaitingTime, Group_order)), ]
 
-## pivot data 
+
+## pivot data & sum totals
 
 diagnostic_waits_pivot <- diagnostic_waits %>% 
   group_by(MonthEnding, HB, HBName, DiagnosticTestType, DiagnosticTestDescription) %>% 
-  pivot_wider(names_from = WaitingTime, values_from = NumberOnList) %>% 
+  pivot_wider(names_from = WaitingTime, values_from = NumberOnList)
+
+diagnostic_waits_pivot$`92-182 days` <- replace(diagnostic_waits_pivot$`92-182 days`, is.na(diagnostic_waits_pivot$`92-182 days`), 0)
+diagnostic_waits_pivot$`183-273 days` <- replace(diagnostic_waits_pivot$`183-273 days`, is.na(diagnostic_waits_pivot$`183-273 days`), 0)
+diagnostic_waits_pivot$`274-364 days` <- replace(diagnostic_waits_pivot$`274-364 days`, is.na(diagnostic_waits_pivot$`274-364 days`), 0)
+diagnostic_waits_pivot$`92 days and over` <- replace(diagnostic_waits_pivot$`92 days and over`, is.na(diagnostic_waits_pivot$`92 days and over`), 0)
+diagnostic_waits_pivot$`365 days and over` <- replace(diagnostic_waits_pivot$`365 days and over`, is.na(diagnostic_waits_pivot$`365 days and over`), 0)
+
+diagnostic_waits_pivot <- diagnostic_waits_pivot %>% 
   rowwise() %>% mutate(Total = sum(c_across(`0-7 days`:`365 days and over`))) %>% 
   rowwise() %>% mutate(`Within 6 weeks` = sum(c_across(`0-7 days`:`36-42 days`))) %>%
   rowwise() %>% mutate(`Over 6 weeks` = sum(c_across(`43-49 days`:`365 days and over`))) %>%
   mutate(`% on target`=round (`Within 6 weeks`/`Total`*100, digit=1)) %>% 
   mutate(`% not on target`=round (`Over 6 weeks`/`Total`*100, digit=1))
-  
+
 ## export
 
 diagnostic_waits_pivot %>% 
