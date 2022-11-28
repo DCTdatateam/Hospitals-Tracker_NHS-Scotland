@@ -2,7 +2,6 @@
 library(tidyverse)
 library(dplyr)
 library(Rcpp)
-library(s2)
 library(sf)
 
 ## PHS Cancelled Planned operations
