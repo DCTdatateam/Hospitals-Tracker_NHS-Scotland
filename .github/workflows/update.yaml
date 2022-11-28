@@ -49,6 +49,10 @@ jobs:
           source('scripts/beds-information.R')
       shell: Rscript {0}
       
+    - name: Cancelled ops
+      run: |
+          source('scripts/cancelled-operations.R')
+      shell: Rscript {0}
 
     - name: Diagnostic waits
       run: |
