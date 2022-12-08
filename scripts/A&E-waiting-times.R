@@ -45,6 +45,39 @@ hospitalslookup <- currenthospitals[c(1:5,8,14:15,17)]
 
 AEWT <- read.csv("https://www.opendata.nhs.scot/dataset/997acaa5-afe0-49d9-b333-dcf84584603d/resource/2a4adc0a-e8e3-4605-9ade-61e13a85b3b9/download/monthly_ae_waitingtimes_202204.csv")
 
+## compare to last month's data
+
+x <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv")        ## previous data 
+y <- AEWT    ## new data
+
+columns_equal <- setequal(names(x), names(y))
+
+columns_added <- setdiff(names(y), names(x))
+columns_dropped <- setdiff(names(x), names(y))
+
+added_empty <- identical(columns_added, character(0))
+dropped_empty <- identical(columns_dropped, character(0))
+
+
+if (dropped_empty == TRUE & added_empty == FALSE) {
+  message= paste("Column(s) added: ", list(columns_added))
+} else if (dropped_empty == FALSE & added_empty == TRUE) {
+  message= paste("Column(s) removed: ", list(columns_dropped))
+} else if (dropped_empty == FALSE & added_empty == FALSE) {
+  message= paste("Column(s) removed: ", list(columns_dropped), 
+                 "Column(s) added: ", list(columns_added))
+} else {message <- NULL}
+     
+column_compare <- 
+  if(columns_equal == FALSE) {
+    stop(paste("Warning: Column names changed, A&E waiting times affected.", message))
+    break
+  }else if(columns_equal == TRUE) {
+  print('A&E waiting times column names match')
+}
+  
+## join to locations
+
 names(AEWT)[names(AEWT) == 'TreatmentLocation'] <- 'Location'
 
 AEWT <- AEWT %>%
