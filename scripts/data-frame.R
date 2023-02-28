@@ -115,7 +115,7 @@ beds_info <- function(x,y) {
 
 BIHB_PHS <- read.csv("https://www.opendata.nhs.scot/dataset/554b0e7a-ccac-4bb6-82db-1a8b306fcb36/resource/f272bb7d-5320-4491-84c1-614a2c064007/download/beds_by_nhs_board_of_treatment_and_specialty.csv")
 
-BIHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/beds_by_nhs_board_of_treatment_and_specialty_q2_2022.csv")
+BIHB_GH <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/beds_by_nhs_board_of_treatment_and_specialty_Q3_2022.csv")
 
 beds_info(BIHB_PHS, BIHB_GH)
 
