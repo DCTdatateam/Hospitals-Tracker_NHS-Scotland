@@ -92,3 +92,4 @@ Date2,Month,Year,Location,LocationName,Postcode,AddressLine,lon,lat,CAName,Total
 2022-11-01,Nov,2022,G107H,Glasgow Royal Infirmary,G4 0SF,"84 Castle Street, Glasgow",-4.23566038415277,55.86402957354226,Glasgow City,763,39,724,94.9,5.1,5.1,10,20,9,0,1.3,2.6,1.2,0,25.6,51.3,23.1,0,724,39
 2022-12-01,Dec,2022,G107H,Glasgow Royal Infirmary,G4 0SF,"84 Castle Street, Glasgow",-4.23566038415277,55.86402957354226,Glasgow City,579,63,516,89.1,10.9,10.9,9,19,32,3,1.6,3.3,5.5,0.5,14.3,30.2,50.8,4.8,516,63
 2023-01-01,Jan,2023,G107H,Glasgow Royal Infirmary,G4 0SF,"84 Castle Street, Glasgow",-4.23566038415277,55.86402957354226,Glasgow City,455,16,439,96.5,3.5,3.5,4,6,6,0,0.9,1.3,1.3,0,25,37.5,37.5,0,439,16
+2023-02-01,Feb,2023,G107H,Glasgow Royal Infirmary,G4 0SF,"84 Castle Street, Glasgow",-4.23566038415277,55.86402957354226,Glasgow City,614,45,569,92.7,7.3,7.3,8,17,20,0,1.3,2.8,3.3,0,17.8,37.8,44.4,0,569,45
