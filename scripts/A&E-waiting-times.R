@@ -23,8 +23,8 @@ AEWT <- read.csv("https://www.opendata.nhs.scot/dataset/997acaa5-afe0-49d9-b333-
 
 ## compare to previous data
 
-##x <- AEWT        ## previous data 
-##y <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/test.csv")    ## new data
+x <- AEWT        ## previous data 
+y <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/test.csv")    ## new data
 
 ##x <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv")        ## previous data 
 ##y <- AEWT    ## new data
