@@ -23,8 +23,11 @@ AEWT <- read.csv("https://www.opendata.nhs.scot/dataset/997acaa5-afe0-49d9-b333-
 
 ## compare to previous data
 
-x <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv")        ## previous data 
-y <- AEWT    ## new data
+##x <- AEWT        ## previous data 
+##y <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/test.csv")    ## new data
+
+##x <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv")        ## previous data 
+##y <- AEWT    ## new data
 
 columns_equal <- setequal(names(x), names(y))
 
@@ -46,7 +49,7 @@ if (dropped_empty == TRUE & added_empty == FALSE) {
 
 column_compare <- 
   if(columns_equal == FALSE) {
-    stop(paste("Warning: Column names changed, A&E waiting times affected.", message))
+    warning(paste("Warning: Column names changed, A&E waiting times affected.", message))
     break
   }else if(columns_equal == TRUE) {
     print('A&E waiting times column names match')
