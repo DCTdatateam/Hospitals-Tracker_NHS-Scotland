@@ -29,10 +29,10 @@ jobs:
          
     # Run scripts
     
-    - name: Compare new data
-      run: |
-          source('scripts/data-frame.R')
-      shell: Rscript {0}
+    #- name: Compare new data
+      #run: |
+          #source('scripts/data-frame.R')
+      #shell: Rscript {0}
     
     - name: Delayed discharges
       run: |
