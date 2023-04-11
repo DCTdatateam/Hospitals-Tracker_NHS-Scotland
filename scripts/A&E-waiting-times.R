@@ -9,8 +9,8 @@ HB <- read.csv("https://www.opendata.nhs.scot/dataset/9f942fdb-e59e-44f5-b534-d6
   select(c("HB","HBName")) %>% 
   rename(HBT = HB)
 
-## "https://www.opendata.nhs.scot/dataset/65402d20-f0f1-4cee-a4f9-a960ca560444/resource/0450a5a2-f600-4569-a9ae-5d6317141899/download/special-health-boards_19022021.csv"
-SHB <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv") %>% 
+
+SHB <- read.csv(""https://www.opendata.nhs.scot/dataset/65402d20-f0f1-4cee-a4f9-a960ca560444/resource/0450a5a2-f600-4569-a9ae-5d6317141899/download/special-health-boards_19022021.csv") %>% 
   select(c("SHB","SHBName")) %>% 
   rename(HBT = SHB,
          HBName = SHBName)
@@ -18,8 +18,9 @@ SHB <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/r
 healthboards <- rbind(HB, SHB)
 
 ## A&E waiting times data
+## "https://www.opendata.nhs.scot/dataset/65402d20-f0f1-4cee-a4f9-a960ca560444/resource/0450a5a2-f600-4569-a9ae-5d6317141899/download/special-health-boards_19022021.csv"
 
-AEWT <- read.csv("https://www.opendata.nhs.scot/dataset/997acaa5-afe0-49d9-b333-dcf84584603d/resource/2a4adc0a-e8e3-4605-9ade-61e13a85b3b9/download/monthly_ae_waitingtimes_202204.csv")
+AEWT <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv")
 
 ## compare to previous data
 
