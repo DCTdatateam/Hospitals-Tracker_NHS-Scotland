@@ -49,8 +49,7 @@ if (dropped_empty == TRUE & added_empty == FALSE) {
 
 column_compare <- 
   if(columns_equal == FALSE) {
-    warning(paste("Warning: Column names changed, A&E waiting times affected.", message))
-    break
+    message(paste("Warning: Column names changed, A&E waiting times affected.", message))
   }else if(columns_equal == TRUE) {
     print('A&E waiting times column names match')
   }
@@ -64,9 +63,9 @@ AEWT <- AEWT %>%
 
 AEWT <- AEWT %>%
   rename(Date1 = Month) %>% 
-  mutate(Date2=as.Date(paste0(as.character(Date1), '01'), format='%Y%m%d')) %>%
-  mutate(Year=format(as.Date(Date2, format="%d/%m/%Y"),"%Y")) %>%
-  mutate(Month=format(as.Date(Date2, format="%d/%m/%Y"),"%b"))
+  mutate(Date2=as.Date(paste0(as.character(Date1), '01'), format='%Y%m%d'),
+         Year=format(as.Date(Date2, format="%d/%m/%Y"),"%Y"),
+         Month=format(as.Date(Date2, format="%d/%m/%Y"),"%b"))
 
 ## SECTION 1 - STANDARD LEVEL DATA
 ## Time series by HB and Scotland aggregate
@@ -75,9 +74,9 @@ Scotlandtimeseries <- AEWT %>%
   group_by(Date2, Month, Year, Country) %>%                            
   summarise(NumberOfAttendancesAggregate = sum(NumberOfAttendancesAggregate), 
             NumberMeetingTargetAggregate = sum(NumberMeetingTargetAggregate)) %>%
-  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate) %>%
-  mutate(PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1)) %>% 
+  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate,
+         PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1)) %>% 
   rename(HBT = Country) %>% 
   mutate(HBName="Scotland", .after = HBT)
 
@@ -86,9 +85,9 @@ Healthboardtimeseries <- AEWT %>%
   group_by(Date2, Month, Year, HBT, HBName) %>%                            
   summarise(NumberOfAttendancesAggregate = sum(NumberOfAttendancesAggregate), 
             NumberMeetingTargetAggregate = sum(NumberMeetingTargetAggregate)) %>%
-  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate) %>%
-  mutate(PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1))
+  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate,
+         PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1))
 
 ## bind spreadsheets for combined Scotland and HB breakdown
 ##duplicate columns for pop ups issue 
@@ -96,8 +95,8 @@ Healthboardtimeseries <- AEWT %>%
 
 AEWt_4hrstandard_timeseries <- Scotlandtimeseries %>%
   rbind(Healthboardtimeseries) %>% 
-  mutate(`Seen within target`=NumberMeetingTargetAggregate) %>%
-  mutate(`Waiting over 4 hrs`=NumberNotOnTarget)
+  mutate(`Seen within target`=NumberMeetingTargetAggregate,
+         `Waiting over 4 hrs`=NumberNotOnTarget)
 
 
 ## SECTION 2 - EPISODE LEVEL DATA
@@ -120,16 +119,16 @@ episode_Scotlandtimeseries <- episode_level_data %>%
             DischargeDestinationResidence = sum(DischargeDestinationResidence),
             DischargeDestinationTransfer = sum(DischargeDestinationTransfer),
             DischargeDestinationUnknown = sum(DischargeDestinationUnknown)) %>%
-  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate) %>%
-  mutate(PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(`% Waiting over 8hrs`=round (AttendanceGreater8hrs/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(`% Waiting over 12hrs`=round (AttendanceGreater12hrs/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageAdmissionToSame=round (DischargeDestinationAdmissionToSame/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationOtherSpecialty=round (DischargeDestinationOtherSpecialty/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationResidence=round (DischargeDestinationResidence/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationTransfer=round (DischargeDestinationTransfer/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationUnknown=round (DischargeDestinationUnknown/NumberOfAttendancesAggregate*100, digit=1)) %>% 
+  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate,
+         PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1),
+         `% Waiting over 8hrs`=round (AttendanceGreater8hrs/NumberOfAttendancesAggregate*100, digit=1),
+         `% Waiting over 12hrs`=round (AttendanceGreater12hrs/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageAdmissionToSame=round (DischargeDestinationAdmissionToSame/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationOtherSpecialty=round (DischargeDestinationOtherSpecialty/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationResidence=round (DischargeDestinationResidence/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationTransfer=round (DischargeDestinationTransfer/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationUnknown=round (DischargeDestinationUnknown/NumberOfAttendancesAggregate*100, digit=1)) %>% 
   rename(HBT = Country) %>% 
   mutate(HBName="Scotland", .after = HBT)
 
@@ -145,16 +144,16 @@ episode_Healthboardtimeseries <- episode_level_data %>%
             DischargeDestinationResidence = sum(DischargeDestinationResidence),
             DischargeDestinationTransfer = sum(DischargeDestinationTransfer),
             DischargeDestinationUnknown = sum(DischargeDestinationUnknown)) %>%
-  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate) %>%
-  mutate(PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(`% Waiting over 8hrs`=round (AttendanceGreater8hrs/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(`% Waiting over 12hrs`=round (AttendanceGreater12hrs/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageAdmissionToSame=round (DischargeDestinationAdmissionToSame/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationOtherSpecialty=round (DischargeDestinationOtherSpecialty/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationResidence=round (DischargeDestinationResidence/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationTransfer=round (DischargeDestinationTransfer/NumberOfAttendancesAggregate*100, digit=1)) %>%
-  mutate(PercentageDestinationUnknown=round (DischargeDestinationUnknown/NumberOfAttendancesAggregate*100, digit=1))
+  mutate(NumberNotOnTarget=NumberOfAttendancesAggregate-NumberMeetingTargetAggregate,
+         PercentageOnTarget=round (NumberMeetingTargetAggregate/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageNotOnTarget=round (NumberNotOnTarget/NumberOfAttendancesAggregate*100, digit=1),
+         `% Waiting over 8hrs`=round (AttendanceGreater8hrs/NumberOfAttendancesAggregate*100, digit=1),
+         `% Waiting over 12hrs`=round (AttendanceGreater12hrs/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageAdmissionToSame=round (DischargeDestinationAdmissionToSame/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationOtherSpecialty=round (DischargeDestinationOtherSpecialty/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationResidence=round (DischargeDestinationResidence/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationTransfer=round (DischargeDestinationTransfer/NumberOfAttendancesAggregate*100, digit=1),
+         PercentageDestinationUnknown=round (DischargeDestinationUnknown/NumberOfAttendancesAggregate*100, digit=1))
 
 
 AEWt_episode_timeseries <- episode_Scotlandtimeseries %>%
