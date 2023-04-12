@@ -2,8 +2,8 @@ name: update
 
 on:
   workflow_dispatch:
-  #schedule: 
-  #- cron: "*/30 * * * TUE"
+  schedule: 
+  - cron: "*/30 * * * TUE"
 
 jobs: 
   upload:
@@ -29,10 +29,6 @@ jobs:
          
     # Run scripts
     
-    #- name: Compare new data
-      #run: |
-          #source('scripts/data-frame.R')
-      #shell: Rscript {0}
     
     - name: Delayed discharges
       run: |
