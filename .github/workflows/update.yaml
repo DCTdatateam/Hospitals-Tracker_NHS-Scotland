@@ -9,7 +9,7 @@ jobs:
   upload:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: r-lib/actions/setup-r@12d5b556c504a4be89f0dc9779e0de65bf0cfa44
       with:
         r-version: ${{ env.R_VERSION }}
