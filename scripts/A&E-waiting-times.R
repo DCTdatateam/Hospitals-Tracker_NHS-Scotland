@@ -19,12 +19,12 @@ healthboards <- rbind(HB, SHB)
 
 ## A&E waiting times data
 
-AEWT <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/test.csv")
+AEWT <- read.csv("https://www.opendata.nhs.scot/dataset/997acaa5-afe0-49d9-b333-dcf84584603d/resource/2a4adc0a-e8e3-4605-9ade-61e13a85b3b9/download/monthly_ae_waitingtimes_202204.csv")
 
 ## compare to last month's data
 
 x <- read_csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/monthly_ae_waitingtimes_202204.csv")        ## previous data 
-y <- read.csv("https://github.com/DCTdatateam/Hospitals-Tracker_NHS-Scotland/raw/main/data/source-data/test.csv")    ## new data (AEWT)
+y <- AEWT    ## new data
 
 columns_equal <- setequal(names(x), names(y))
 
