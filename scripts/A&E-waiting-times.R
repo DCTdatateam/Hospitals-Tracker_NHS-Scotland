@@ -154,20 +154,7 @@ episode_Healthboardtimeseries = episode_level_data %>%
 
 AEWt_episode_timeseries = episode_Scotlandtimeseries %>%
   rbind(episode_Healthboardtimeseries)
-
-write.csv(AEWt_4hrstandard_timeseries, "/Users/Steve/Desktop/AEWt_4hrstandard_timeseries.csv", row.names = FALSE)
-write.csv(AEWt_episode_timeseries, "C:/Users/Steve/Desktop/AEWt_episode_timeseries.csv", row.names = FALSE)
-
-                                      
-##change col names for Flourish legend
-                                      
-#names(AEWt_episode_timeseries)[names(AEWt_episode_timeseries) == 'DischargeDestinationAdmissionToSame'] <- 'Hospital - ICU'
-#names(AEWt_episode_timeseries)[names(AEWt_episode_timeseries) == 'DischargeDestinationOtherSpecialty'] <- 'Hospital - other speciality'
-#names(AEWt_episode_timeseries)[names(AEWt_episode_timeseries) == 'DischargeDestinationResidence'] <- 'Home'
-#names(AEWt_episode_timeseries)[names(AEWt_episode_timeseries) == 'DischargeDestinationTransfer'] <- 'Hospital - transfer'
-#names(AEWt_episode_timeseries)[names(AEWt_episode_timeseries) == 'DischargeDestinationUnknown'] <- 'Unknown'
-                                      
-                                      
+                                                                            
                                                                             
 ##change col names for Flourish legend
 
