@@ -30,10 +30,10 @@ jobs:
     # Run scripts
     
     
-#    - name: Delayed discharges
-#      run: |
-#          source('scripts/delayed-discharges.R')
-#      shell: Rscript {0}
+    - name: Delayed discharges
+      run: |
+          source('scripts/delayed-discharges.R')
+      shell: Rscript {0}
     
     - name: A&E waiting times
       run: |
