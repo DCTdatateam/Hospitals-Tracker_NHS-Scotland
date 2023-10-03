@@ -26,7 +26,7 @@ lookups <- rbind(healthboards,ScotID)
 
 ## Delayed discharges by health board (DDHB)
 
-DDHB <- read.csv("https://www.opendata.nhs.scot/dataset/52591cba-fd71-48b2-bac3-e71ac108dfee/resource/49ca8a39-7f01-4e2b-acd6-205bc9827852/download/2023-06_delayed-discharge-beddays-health-board.csv")
+DDHB <- read.csv("https://www.opendata.nhs.scot/dataset/52591cba-fd71-48b2-bac3-e71ac108dfee/resource/fd354e4b-6211-48ba-8e4f-8356a5ed4215/download/2023-07_delayed-discharge-beddays-health-board.csv")
 
 ## compare to previous 
 
