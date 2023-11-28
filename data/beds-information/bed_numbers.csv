@@ -1,34 +1,4 @@
 "Quarter","Date","HB","HBName","SpecialtyName","Average Available Staffed Beds","Average Occupied Beds","Average Unoccupied Beds","Percentage Occupied","Percentage Unoccupied"
-"2017Q4","Q4 2017","S92000003","Scotland","All Acute",13356,11612,1744,86.9,13.1
-"2017Q4","Q4 2017","S08000015","NHS Ayrshire and Arran","All Acute",1052,972,80,92.4,7.6
-"2017Q4","Q4 2017","S08000016","NHS Borders","All Acute",227,207,20,91.2,8.8
-"2017Q4","Q4 2017","S08000017","NHS Dumfries and Galloway","All Acute",395,312,83,79,21
-"2017Q4","Q4 2017","S08000019","NHS Forth Valley","All Acute",628,597,30,95.2,4.8
-"2017Q4","Q4 2017","S08000020","NHS Grampian","All Acute",1075,903,172,84,16
-"2017Q4","Q4 2017","S08000022","NHS Highland","All Acute",530,470,60,88.7,11.3
-"2017Q4","Q4 2017","S08000024","NHS Lothian","All Acute",2036,1839,197,90.3,9.7
-"2017Q4","Q4 2017","S08000025","NHS Orkney","All Acute",39,38,1,97.9,2.1
-"2017Q4","Q4 2017","S08000026","NHS Shetland","All Acute",44,27,17,61.8,38.2
-"2017Q4","Q4 2017","S08000028","NHS Western Isles","All Acute",69,53,16,76.7,23.3
-"2017Q4","Q4 2017","S08000029","NHS Fife","All Acute",697,596,101,85.5,14.5
-"2017Q4","Q4 2017","S08000030","NHS Tayside","All Acute",1154,899,255,77.9,22.1
-"2017Q4","Q4 2017","S08000031","NHS Greater Glasgow and Clyde","All Acute",3916,3395,521,86.7,13.3
-"2017Q4","Q4 2017","S08000032","NHS Lanarkshire","All Acute",1319,1170,150,88.6,11.4
-"2018Q1","Q1 2018","S92000003","Scotland","All Acute",13598,12148,1450,89.3,10.7
-"2018Q1","Q1 2018","S08000015","NHS Ayrshire and Arran","All Acute",1081,998,83,92.3,7.7
-"2018Q1","Q1 2018","S08000016","NHS Borders","All Acute",230,222,8,96.5,3.5
-"2018Q1","Q1 2018","S08000017","NHS Dumfries and Galloway","All Acute",360,328,32,91.1,8.9
-"2018Q1","Q1 2018","S08000019","NHS Forth Valley","All Acute",644,598,46,92.9,7.1
-"2018Q1","Q1 2018","S08000020","NHS Grampian","All Acute",1099,975,124,88.8,11.2
-"2018Q1","Q1 2018","S08000022","NHS Highland","All Acute",530,477,52,90.1,9.9
-"2018Q1","Q1 2018","S08000024","NHS Lothian","All Acute",2079,1922,157,92.5,7.5
-"2018Q1","Q1 2018","S08000025","NHS Orkney","All Acute",40,39,1,97.8,2.2
-"2018Q1","Q1 2018","S08000026","NHS Shetland","All Acute",44,26,18,58.9,41.1
-"2018Q1","Q1 2018","S08000028","NHS Western Isles","All Acute",73,58,15,79.7,20.3
-"2018Q1","Q1 2018","S08000029","NHS Fife","All Acute",715,637,78,89.2,10.8
-"2018Q1","Q1 2018","S08000030","NHS Tayside","All Acute",1151,922,230,80.1,19.9
-"2018Q1","Q1 2018","S08000031","NHS Greater Glasgow and Clyde","All Acute",4038,3616,422,89.5,10.5
-"2018Q1","Q1 2018","S08000032","NHS Lanarkshire","All Acute",1341,1198,143,89.4,10.6
 "2018Q2","Q2 2018","S92000003","Scotland","All Acute",13216,11449,1767,86.6,13.4
 "2018Q2","Q2 2018","S08000015","NHS Ayrshire and Arran","All Acute",997,922,75,92.4,7.6
 "2018Q2","Q2 2018","S08000016","NHS Borders","All Acute",229,212,17,92.5,7.5
@@ -299,7 +269,7 @@
 "2022Q3","Q3 2022","S08000030","NHS Tayside","All Acute",1207,916,290,75.9,24.1
 "2022Q3","Q3 2022","S08000031","NHS Greater Glasgow and Clyde","All Acute",3965,3587,378,90.5,9.5
 "2022Q3","Q3 2022","S08000032","NHS Lanarkshire","All Acute",1319,1210,109,91.7,8.3
-"2022Q4","Q4 2022","S92000003","Scotland","All Acute",13695,12165,1530,88.8,11.2
+"2022Q4","Q4 2022","S92000003","Scotland","All Acute",13695,12164,1531,88.8,11.2
 "2022Q4","Q4 2022","S08000015","NHS Ayrshire and Arran","All Acute",1045,990,55,94.7,5.3
 "2022Q4","Q4 2022","S08000016","NHS Borders","All Acute",227,215,12,94.7,5.3
 "2022Q4","Q4 2022","S08000017","NHS Dumfries and Galloway","All Acute",340,304,37,89.2,10.8
@@ -310,7 +280,37 @@
 "2022Q4","Q4 2022","S08000025","NHS Orkney","All Acute",33,33,1,97.1,2.9
 "2022Q4","Q4 2022","S08000026","NHS Shetland","All Acute",55,30,25,55,45
 "2022Q4","Q4 2022","S08000028","NHS Western Isles","All Acute",71,49,22,68.5,31.5
-"2022Q4","Q4 2022","S08000029","NHS Fife","All Acute",782,628,154,80.3,19.7
+"2022Q4","Q4 2022","S08000029","NHS Fife","All Acute",782,627,155,80.2,19.8
 "2022Q4","Q4 2022","S08000030","NHS Tayside","All Acute",1195,939,256,78.6,21.4
 "2022Q4","Q4 2022","S08000031","NHS Greater Glasgow and Clyde","All Acute",3998,3664,335,91.6,8.4
 "2022Q4","Q4 2022","S08000032","NHS Lanarkshire","All Acute",1326,1224,102,92.3,7.7
+"2023Q1","Q1 2023","S92000003","Scotland","All Acute",13895,12312,1583,88.6,11.4
+"2023Q1","Q1 2023","S08000015","NHS Ayrshire and Arran","All Acute",1043,992,51,95.1,4.9
+"2023Q1","Q1 2023","S08000016","NHS Borders","All Acute",225,213,12,94.8,5.2
+"2023Q1","Q1 2023","S08000017","NHS Dumfries and Galloway","All Acute",330,296,34,89.7,10.3
+"2023Q1","Q1 2023","S08000019","NHS Forth Valley","All Acute",819,643,175,78.6,21.4
+"2023Q1","Q1 2023","S08000020","NHS Grampian","All Acute",1012,931,81,92,8
+"2023Q1","Q1 2023","S08000022","NHS Highland","All Acute",601,556,44,92.6,7.4
+"2023Q1","Q1 2023","S08000024","NHS Lothian","All Acute",2087,1908,180,91.4,8.6
+"2023Q1","Q1 2023","S08000025","NHS Orkney","All Acute",36,35,1,97.5,2.5
+"2023Q1","Q1 2023","S08000026","NHS Shetland","All Acute",54,26,27,48.9,51.1
+"2023Q1","Q1 2023","S08000028","NHS Western Isles","All Acute",69,48,22,69,31
+"2023Q1","Q1 2023","S08000029","NHS Fife","All Acute",801,617,184,77,23
+"2023Q1","Q1 2023","S08000030","NHS Tayside","All Acute",1241,943,299,75.9,24.1
+"2023Q1","Q1 2023","S08000031","NHS Greater Glasgow and Clyde","All Acute",4059,3739,320,92.1,7.9
+"2023Q1","Q1 2023","S08000032","NHS Lanarkshire","All Acute",1326,1222,105,92.1,7.9
+"2023Q2","Q2 2023","S92000003","Scotland","All Acute",13680,11920,1760,87.1,12.9
+"2023Q2","Q2 2023","S08000015","NHS Ayrshire and Arran","All Acute",983,944,39,96,4
+"2023Q2","Q2 2023","S08000016","NHS Borders","All Acute",222,205,17,92.3,7.7
+"2023Q2","Q2 2023","S08000017","NHS Dumfries and Galloway","All Acute",328,294,34,89.6,10.4
+"2023Q2","Q2 2023","S08000019","NHS Forth Valley","All Acute",819,603,216,73.7,26.3
+"2023Q2","Q2 2023","S08000020","NHS Grampian","All Acute",1003,923,81,91.9,8.1
+"2023Q2","Q2 2023","S08000022","NHS Highland","All Acute",604,543,61,89.9,10.1
+"2023Q2","Q2 2023","S08000024","NHS Lothian","All Acute",2045,1816,229,88.8,11.2
+"2023Q2","Q2 2023","S08000025","NHS Orkney","All Acute",38,37,1,97.4,2.6
+"2023Q2","Q2 2023","S08000026","NHS Shetland","All Acute",51,22,29,42.4,57.6
+"2023Q2","Q2 2023","S08000028","NHS Western Isles","All Acute",70,47,22,67.8,32.2
+"2023Q2","Q2 2023","S08000029","NHS Fife","All Acute",808,614,194,76,24
+"2023Q2","Q2 2023","S08000030","NHS Tayside","All Acute",1203,884,319,73.5,26.5
+"2023Q2","Q2 2023","S08000031","NHS Greater Glasgow and Clyde","All Acute",4008,3645,363,91,9
+"2023Q2","Q2 2023","S08000032","NHS Lanarkshire","All Acute",1303,1199,104,92,8
