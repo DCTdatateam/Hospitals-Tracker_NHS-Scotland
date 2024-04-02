@@ -318,7 +318,7 @@ hospitalmapbase <- hospitalmapbase %>%
 write.csv(cancelledops, "data/cancelled-operations/scheduled_and_cancelled_ops_by_HB_NEW.csv", row.names = FALSE)
 
 ## 2. hospital map base 
-write.csv(hospitalmapbase, "data/cancelled-operations/map_base.csv_NEW", row.names = FALSE) ## all hospitals
+write.csv(hospitalmapbase, "data/cancelled-operations/map_base_NEW.csv", row.names = FALSE) ## all hospitals
 
 ##3 hospitals time series
 #time_series_hosp %>% 
