@@ -319,4 +319,4 @@ write.csv(hospitalmapbase, "data/cancelled-operations/map_base.csv", row.names =
 ##3 hospitals time series
 time_series_hosp %>% 
   group_by(filename) %>% 
-  group_walk(~ write_csv(.x, paste0("data/cancelled-operations/hospitals/", .y$filename, ".csv")))
+  group_walk(~ write_csv(.x, paste0("data/cancelled-operations/hospitals/test/", .y$filename, ".csv")))
