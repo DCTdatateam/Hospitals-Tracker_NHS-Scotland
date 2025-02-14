@@ -166,13 +166,13 @@ diagnostic_waits <- diagnostic_waits %>%
 
 
 diagnostic_waits$WaitingTime <- factor(diagnostic_waits$WaitingTime, 
-                                       levels = c("0-7 days", "8-14 days", "15-21days", "22-28 days",
+                                       levels = c("0-7 days", "8-14 days", "15-21 days", "22-28 days",
                                                   "29-35 days", "36-42 days", "43-49 days", "50-56 days",
                                                   "57-63 days", "64-70 days", "71-77 days", "78-84 days",
                                                   "85-91 days", "92-182 days", "183-273 days", "274-364 days", 
                                                   "92 days and over", "365 days and over")) 
 
-Group_order <- c("0-7 days", "8-14 days", "15-21days", "22-28 days",
+Group_order <- c("0-7 days", "8-14 days", "15-21 days", "22-28 days",
                  "29-35 days", "36-42 days", "43-49 days", "50-56 days",
                  "57-63 days", "64-70 days", "71-77 days", "78-84 days",
                  "85-91 days", "92-182 days", "183-273 days", "274-364 days", 
